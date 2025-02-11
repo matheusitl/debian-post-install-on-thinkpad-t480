@@ -173,13 +173,13 @@ sudo nano /usr/lib/systemd/system/open-fprintd-resume.service
 in the `[Service]` section, comment out this line by adding `#` at the beginning
 
 ```plaintext
-`#ExecStart=/usr/lib/open-fprintd/resume.py`  
+#ExecStart=/usr/lib/open-fprintd/resume.py
 ```
 
 and add this new line to restart the services when resuming:
 
 ```plaintext
-`ExecStart=systemctl restart open-fprintd.service python3-validity.service`
+ExecStart=systemctl restart open-fprintd.service python3-validity.service
 ```
 
 ### Add to SDDM:
