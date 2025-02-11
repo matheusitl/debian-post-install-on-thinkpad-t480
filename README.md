@@ -162,7 +162,7 @@ fprintd-enroll
 sudo pam-auth-update
 ```
 
-**If fingerprint not working after waking up from suspend, fix it changing** `open-fprintd-resume.service`:**
+**If fingerprint not working after waking up from suspend, fix it changing `open-fprintd-resume.service`:**
 
 Using a text editor
 
