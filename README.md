@@ -6,7 +6,7 @@
 
 ## Configuring APT Sources
 
-To enable additional repositories for proprietary firmware and software, add `contrib non-free non-free-firmware` after `main` in your APT sources:
+To enable additional repositories for proprietary firmware and software, using a text editor, add `contrib non-free non-free-firmware` after `main` in your APT sources:
 
 ```shell
 sudo nano /etc/apt/sources.list
@@ -86,7 +86,7 @@ sudo apt update && sudo apt install apt-transport-https code spotify-client
 
 </br>
 
-## Update Thunderbolt Firmware (Highly recommended!)
+## Update Thunderbolt Firmware (Highly recommended)
 
 If you haven’t done this yet, run the following command
 
@@ -131,11 +131,12 @@ pw-dump
 </br>
 
 ## Fingerprint Authentication
-Download python-validity, fprintd-clients and open-fprintd (for Jammy) from **[PPA direct link](https://launchpad.net/~uunicorn/+archive/ubuntu/open-fprintd/+packages)**
 
 ```shell
 sudo apt remove fprintd
 ```
+
+Download python-validity, fprintd-clients and open-fprintd (for Jammy) from **[PPA direct link](https://launchpad.net/~uunicorn/+archive/ubuntu/open-fprintd/+packages)**.
 
 Go the folder where the downloaded `.deb` files are located `(e.g., cd Downloads)` and install them::
 
@@ -161,21 +162,25 @@ fprintd-enroll
 sudo pam-auth-update
 ```
 
-**If fingerprint not working after waking up from suspend, fix it changing** `open-fprintd-resume.service`**:**
+**If fingerprint not working after waking up from suspend, fix it changing** `open-fprintd-resume.service`:**
 
-Using a text editor:
+Using a text editor
 
 ```shell
 sudo nano /usr/lib/systemd/system/open-fprintd-resume.service
 ```
 
-In the `[Service]` section, comment out this line by adding `#` at the beginning
+in the `[Service]` section, comment out this line by adding `#` at the beginning
 
+```plaintext
 `#ExecStart=/usr/lib/open-fprintd/resume.py`  
+```
 
 and add this new line to restart the services when resuming:
 
+```plaintext
 `ExecStart=systemctl restart open-fprintd.service python3-validity.service`
+```
 
 ### Add to SDDM:
 
@@ -201,7 +206,7 @@ sudo apt install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-Set a Custom Theme:
+Set a Custom Theme using a text editor:
 
 ```shell
 nano ~/.zshrc
@@ -245,7 +250,7 @@ sudo apt install flatpak plasma-discover-backend-flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 ```
 
-Some of my preferred Flatpak apps. These include a variety of useful tools for productivity, media, and gaming:
+Some of my preferred Flatpak apps, these include a variety of useful tools for productivity, media, and gaming:
 
 ```shell
 flatpak install flathub \
@@ -311,7 +316,7 @@ sudo systemctl stop thermald.service
 sudo systemctl disable thermald.service
 ```
 
-If you want to permanently disable `thermald`, you can mask the service:
+**If you want to permanently disable `thermald`, you can mask the service:**
 
 ```shell
 sudo systemctl mask thermald.service
@@ -345,10 +350,10 @@ sudo ./install.sh
 
 </br>
 
-## Install Additional Packages
+## Install Microsoft Fonts
 
 ```shell
-sudo apt install neofetch yt-dlp ttf-mscorefonts-installer
+sudo apt install ttf-mscorefonts-installer
 ```
 
 </br>
