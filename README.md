@@ -138,7 +138,7 @@ sudo apt remove fprintd
 
 Download python-validity, fprintd-clients and open-fprintd (for Jammy) from **[PPA direct link](https://launchpad.net/~uunicorn/+archive/ubuntu/open-fprintd/+packages)**.
 
-Go the folder where the downloaded `.deb` files are located `(e.g., cd Downloads)` and install them::
+Go the folder where the downloaded `.deb` files are located `(e.g., cd Downloads)` and install them:
 
 ```shell
 sudo dpkg -i python-validity*.deb fprintd-clients*.deb open-fprintd*.deb
@@ -263,6 +263,8 @@ flatpak install flathub \
     org.qbittorrent.qBittorrent \
     com.obsproject.Studio \
     com.heroicgameslauncher.hgl \
+    com.vscodium.codium \
+    com.spotify.Client \
     org.flameshot.Flameshot \
     com.steamgriddb.SGDBoop
 ```
