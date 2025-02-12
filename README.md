@@ -58,34 +58,6 @@ sudo apt update
 
 </br>
 
-## Add APT Repositories (_That's my personal preference_)
-
-### VS Code
-
-```shell
-sudo apt install wget gpg
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
-echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" |sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
-rm -f packages.microsoft.gpg
-```
-
-### Spotify
-
-```shell
-sudo apt install curl
-curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
-echo "deb http://repository.spotify.com/ stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-```
-
-Install both:
-
-```shell
-sudo apt update && sudo apt install apt-transport-https code spotify-client
-```
-
-</br>
-
 ## Update Thunderbolt Firmware (Highly recommended)
 
 If you haven’t done this yet, run the following command
@@ -136,7 +108,8 @@ pw-dump
 sudo apt remove fprintd
 ```
 
-Download python-validity, fprintd-clients and open-fprintd (for Jammy) from **[PPA direct link](https://launchpad.net/~uunicorn/+archive/ubuntu/open-fprintd/+packages)**.
+Download python-validity, fprintd-clients, and open-fprintd from the **[uunicorn PPA](https://launchpad.net/~uunicorn/+archive/ubuntu/open-fprintd/+packages)**.
+Make sure to download the version for Ubuntu **Jammy** (22.04), as this version is likely the most compatible with Debian 12 among the available ones.
 
 Go the folder where the downloaded `.deb` files are located `(e.g., cd Downloads)` and install them:
 
