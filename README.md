@@ -58,12 +58,12 @@ sudo apt update
 
 </br>
 
-## Update Thunderbolt Firmware (Highly recommended)
+## Update Thunderbolt Firmware (Highly recommended) *(T480 specific)*
 
 If you haven’t done this yet, run the following command
 
 ```shell
-sudo sh -c 'fwupdmgr refresh && fwupdmgr update'
+fwupdmgr refresh && sudo fwupdmgr update
 ```
 
 The command below is used to check if you are on the **current version 23.00:**
@@ -102,7 +102,7 @@ pw-dump
 
 </br>
 
-## Fingerprint Authentication
+## Fingerprint Authentication *(T480 specific)*
 
 ```shell
 sudo apt remove fprintd
@@ -261,6 +261,7 @@ sudo apt update && sudo apt install steam-installer mesa-vulkan-drivers libglx-m
 </br>
 
 ## Install TLP (Optimize Linux Laptop Battery Life)
+**Note:** This is a general optimization for **any laptop**, not exclusive to the T480.
 
 For Debian backports:
 
@@ -276,7 +277,7 @@ sudo tlp start
 
 </br>
 
-## Install Throttled (Fix Intel CPU Throttling on Linux)
+## Install Throttled (Fix Intel CPU Throttling on Linux) *(T480 specific)*
 
 ```shell
 sudo apt install git build-essential python3-dev libdbus-glib-1-dev libgirepository1.0-dev libcairo2-dev python3-cairo-dev python3-venv python3-wheel
