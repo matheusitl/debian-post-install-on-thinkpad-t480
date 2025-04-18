@@ -261,7 +261,7 @@ sudo apt update && sudo apt install steam-installer mesa-vulkan-drivers libglx-m
 </br>
 
 ## Install TLP (Optimize Linux Laptop Battery Life)
-**Note:** This is a general optimization for **any laptop**, not exclusive to the T480.
+> **Note:** This is a general optimization for **any laptop**, not exclusive to the T480.
 
 For Debian backports:
 
@@ -277,7 +277,10 @@ sudo tlp start
 
 </br>
 
-## Install Throttled (Fix Intel CPU Throttling on Linux) *(T480 specific)*
+## Install Throttled (Fix CPU Power Throttling on Linux Laptops)
+> **Note:** While this step is highly recommended for the **ThinkPad T480**, the `throttled` utility is also effective for many other laptops affected by Intel power and thermal limits.  
+> According to [the official repository](https://github.com/erpalma/throttled), it's designed for systems where Intel Dynamic Platform and Thermal Framework (DPTF) and BIOS impose aggressive throttling.  
+> This includes various **ThinkPad**, **Dell XPS**, **HP EliteBook**, and other Intel-based laptops.
 
 ```shell
 sudo apt install git build-essential python3-dev libdbus-glib-1-dev libgirepository1.0-dev libcairo2-dev python3-cairo-dev python3-venv python3-wheel
