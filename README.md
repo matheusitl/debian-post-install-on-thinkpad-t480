@@ -58,7 +58,7 @@ sudo apt update
 
 </br>
 
-## Update Thunderbolt Firmware (Highly recommended) *(T480 specific)*
+## Thunderbolt Firmware Update *(T480 specific – Highly Recommended)*
 
 If you haven’t done this yet, run the following command
 
